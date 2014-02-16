@@ -3,6 +3,7 @@ ruby '2.0.0'
 
 gem 'bundler'
 
+# Sinatra
 gem 'sinatra'
 gem 'sinatra-contrib'
 
@@ -16,4 +17,8 @@ gem 'xml-sitemap'
 gem 'dalli'
 gem 'rack-cache'
 
+# webserver
 gem 'unicorn'
+
+# foreman
+gem 'foreman'
