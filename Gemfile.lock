@@ -1,0 +1,57 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    backports (3.3.0)
+    builder (3.2.0)
+    dalli (2.6.2)
+    eventmachine (1.0.3)
+    haml (4.0.2)
+      tilt
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
+    kgio (2.8.0)
+    multi_json (1.7.2)
+    multi_xml (0.5.3)
+    rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rack-protection (1.5.0)
+      rack
+    rack-test (0.6.2)
+      rack (>= 1.0)
+    raindrops (0.10.0)
+    sass (3.2.7)
+    sinatra (1.4.2)
+      rack (~> 1.5, >= 1.5.2)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    sinatra-contrib (1.4.0)
+      backports (>= 2.0)
+      eventmachine
+      rack-protection
+      rack-test
+      sinatra (~> 1.4.2)
+      tilt (~> 1.3)
+    tilt (1.3.7)
+    unicorn (4.6.2)
+      kgio (~> 2.6)
+      rack
+      raindrops (~> 0.7)
+    xml-sitemap (1.3.0)
+      builder (>= 2.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  bundler
+  dalli
+  haml
+  httparty
+  rack-cache
+  sass
+  sinatra
+  sinatra-contrib
+  unicorn
+  xml-sitemap
