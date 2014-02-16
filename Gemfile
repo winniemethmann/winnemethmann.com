@@ -20,5 +20,6 @@ gem 'rack-cache'
 # webserver
 gem 'unicorn'
 
-# foreman
-gem 'foreman'
+group :development do
+  gem 'foreman'
+end
