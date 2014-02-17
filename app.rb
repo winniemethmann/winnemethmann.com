@@ -70,7 +70,7 @@ get '/sitemap.xml' do
 
   map = XmlSitemap::Map.new('www.winniemethmann.com') do |m|
     @pieces.each do |piece|
-      m.add(photo_page_url(piece), :updated => Time.at(piece["dateupload"].to_i))
+      m.add(photo_url(piece), :updated => Time.at(piece["dateupload"].to_i))
     end
   end
 
