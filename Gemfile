@@ -12,6 +12,7 @@ gem 'haml'
 gem 'httparty'
 gem 'sass'
 gem 'xml-sitemap'
+gem 'rdiscount'
 
 # caching
 gem 'dalli'

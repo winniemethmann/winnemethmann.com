@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler'
 Bundler.require :default, (ENV["RACK_ENV"] || "development").to_sym
+require 'rdiscount'
 require './flickr.rb'
 
 configure do
@@ -64,6 +65,10 @@ get '/custom.css' do
   sass :customcss
 end
 
+get '/pricing' do
+  markdown :pricing
+end
+
 get '/sitemap.xml' do
   cache_control :public, max_age: 7200 # two hours
   @pieces = get_photos
@@ -93,7 +98,7 @@ __END__
       = yield_content :title
       | Winnie Methmann Photography
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
-    %meta{:content => "Winnie Methmann is a Danish fashion and design photographer", :name => "description"}
+    %meta{:content => "Winnie Methmann is a danish fashion and design photographer", :name => "description"}
     %meta{:content => "Winnie Methmann", :name => "author"}
     - unless yield_content(:image_src).empty?
       %link{:rel => "image_src", :href => yield_content(:image_src)}
@@ -113,11 +118,13 @@ __END__
       %div{:class => "container-fluid"}
         = yield
       #footer
-        %p a Danish fashion and design photographer
+        %p a danish fashion and design photographer
         &copy;
         %a{:href => "http://www.winniemethmann.com/"} Winnie Methmann
         = Time.now.year
         = haml :ga
+        :javascript
+          $('a#pricing').colorbox();
 
 
 @@ index
@@ -171,6 +178,13 @@ __END__
 - content_for :title do
   Not found (404)
 %h4 Not found
+
+@@ pricing
+# Pricing
+
+## Sub
+
+### Subsub
 
 @@ customcss
 body
